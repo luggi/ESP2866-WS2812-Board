@@ -192,7 +192,7 @@ F 3 "" H 7600 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 8500 4200 0    60   ~ 0
-Prog_pin
+GPIO2
 $Comp
 L GND #PWR06
 U 1 1 56E85A75
@@ -301,9 +301,9 @@ F 3 "" H 4250 2650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 4650 1750 0    60   ~ 0
-CH340_TX
-Text Label 4650 1550 0    60   ~ 0
 CH340_RX
+Text Label 4650 1550 0    60   ~ 0
+CH340_TX
 $Comp
 L JUMPER JP1
 U 1 1 56E95E42
@@ -940,7 +940,7 @@ $EndComp
 Text Label 9250 4300 0    60   ~ 0
 RESET
 Text Label 9900 4300 0    60   ~ 0
-Prog_pin
+GPIO0
 $Comp
 L GND #PWR041
 U 1 1 56EB4062
@@ -977,7 +977,7 @@ GPIO4
 Text Label 8100 2250 0    60   ~ 0
 GPIO0
 Text Label 8100 2350 0    60   ~ 0
-Prog_pin
+GPIO2
 Text Label 8100 2450 0    60   ~ 0
 GPIO15
 $Comp
@@ -1060,7 +1060,7 @@ Wire Wire Line
 Wire Wire Line
 	8750 4100 8500 4100
 Wire Wire Line
-	8750 4200 8500 4200
+	8500 4200 8950 4200
 Wire Wire Line
 	8750 4300 8500 4300
 Wire Wire Line
@@ -1216,7 +1216,6 @@ Wire Wire Line
 Wire Wire Line
 	1450 2350 1450 2550
 Connection ~ 1450 2550
-Connection ~ 10400 5550
 $Comp
 L CONN_01X07 P3
 U 1 1 56EC0BDE
@@ -1430,4 +1429,55 @@ F 3 "" H 5350 6450 50  0000 C CNN
 	1    5350 6450
 	1    0    0    -1  
 $EndComp
+$Comp
+L R R?
+U 1 1 570591ED
+P 10200 4150
+F 0 "R?" V 10280 4150 50  0000 C CNN
+F 1 "10k" V 10200 4150 50  0000 C CNN
+F 2 "" V 10130 4150 50  0000 C CNN
+F 3 "" H 10200 4150 50  0000 C CNN
+	1    10200 4150
+	1    0    0    -1  
+$EndComp
+Connection ~ 10200 4300
+$Comp
+L +3V3 #PWR?
+U 1 1 57059540
+P 10200 3950
+F 0 "#PWR?" H 10200 3800 50  0001 C CNN
+F 1 "+3V3" H 10200 4090 50  0000 C CNN
+F 2 "" H 10200 3950 50  0000 C CNN
+F 3 "" H 10200 3950 50  0000 C CNN
+	1    10200 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10200 3950 10200 4000
+Wire Wire Line
+	8950 4200 8950 4350
+$Comp
+L R R?
+U 1 1 57059B68
+P 8950 4500
+F 0 "R?" V 9030 4500 50  0000 C CNN
+F 1 "10k" V 8950 4500 50  0000 C CNN
+F 2 "" V 8880 4500 50  0000 C CNN
+F 3 "" H 8950 4500 50  0000 C CNN
+	1    8950 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 57059C43
+P 8950 4700
+F 0 "#PWR?" H 8950 4550 50  0001 C CNN
+F 1 "+3V3" H 8950 4840 50  0000 C CNN
+F 2 "" H 8950 4700 50  0000 C CNN
+F 3 "" H 8950 4700 50  0000 C CNN
+	1    8950 4700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8950 4650 8950 4700
 $EndSCHEMATC
